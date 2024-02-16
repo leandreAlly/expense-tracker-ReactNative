@@ -29,6 +29,42 @@ const DUMMY_EXPENSES = [
     amount: 19.99,
     date: new Date('2022-07-17'),
   },
+  {
+    id: 'e5',
+    title: 'New Socks',
+    amount: 9.99,
+    date: new Date('2022-07-18'),
+  },
+  {
+    id: 'e6',
+    title: 'New Underwear',
+    amount: 29.99,
+    date: new Date('2022-07-19'),
+  },
+  {
+    id: 'e7',
+    title: 'New Jacket',
+    amount: 199.99,
+    date: new Date('2022-07-20'),
+  },
+  {
+    id: 'e8',
+    title: 'New Dress',
+    amount: 149.99,
+    date: new Date('2022-07-21'),
+  },
+  {
+    id: 'e9',
+    title: 'New Skirt',
+    amount: 79.99,
+    date: new Date('2022-07-22'),
+  },
+  {
+    id: 'e10',
+    title: 'New Suit',
+    amount: 299.99,
+    date: new Date('2022-07-23'),
+  },
 ];
 
 function ExpensesOutput({ expenses, expensesPeriod }) {
@@ -45,7 +81,9 @@ export default ExpensesOutput;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
+    paddingHorizontal: 24,
+    paddingTop: 24,
+    paddingBottom: 0,
     backgroundColor: GlobalStyles.colors.primary700,
   },
 });
