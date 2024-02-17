@@ -1,5 +1,6 @@
 import { Pressable, Text, View, StyleSheet } from 'react-native';
 import { GlobalStyles } from '../../constants/styles';
+import { formatDate } from '../../util/date';
 
 function ExpenseItem({ title, amount, date }) {
   return (
@@ -7,7 +8,7 @@ function ExpenseItem({ title, amount, date }) {
       <View style={styles.expenseItem}>
         <View>
           <Text style={[styles.textBase, styles.description]}>{title}</Text>
-          <Text style={styles.textBase}>{date.toString()}</Text>
+          <Text style={styles.textBase}>{formatDate(date)}</Text>
         </View>
         <View style={styles.amountContainer}>
           <Text style={styles.amount}>{amount}</Text>
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 6,
+    minWidth: 80,
   },
   amount: {
     color: GlobalStyles.colors.primary500,
