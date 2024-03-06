@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Input from './Input';
 
 function ExpenseForm() {
@@ -6,23 +6,28 @@ function ExpenseForm() {
     // ...
   }
   return (
-    <View>
-      <Input
-        label="Amount"
-        textInputConfig={{
-          keyboardType: 'decimal-pad',
-          onChangeText: amountChangeHandler,
-        }}
-      />
+    <View style={styles.form}>
+      <Text style={styles.title}>Your Expense</Text>
+      <View style={styles.inputContainer}>
+        <Input
+          style={styles.rowInput}
+          label="Amount"
+          textInputConfig={{
+            keyboardType: 'decimal-pad',
+            onChangeText: amountChangeHandler,
+          }}
+        />
 
-      <Input
-        label="Date"
-        textInputConfig={{
-          placeHolder: 'YYYY-MM-DD',
-          maxLength: 10,
-          onChangeText: () => {},
-        }}
-      />
+        <Input
+          style={styles.rowInput}
+          label="Date"
+          textInputConfig={{
+            placeholder: 'YYYY-MM-DD',
+            maxLength: 10,
+            onChangeText: () => {},
+          }}
+        />
+      </View>
       <Input
         label="Description"
         textInputConfig={{
@@ -35,3 +40,23 @@ function ExpenseForm() {
 }
 
 export default ExpenseForm;
+
+const styles = StyleSheet.create({
+  form: {
+    marginTop: 40,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  rowInput: {
+    flex: 1,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+    marginVertical: 24,
+    textAlign: 'center',
+  },
+});
